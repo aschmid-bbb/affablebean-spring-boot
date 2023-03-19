@@ -19,6 +19,9 @@ Aufbau
 ------
 - `mysql/`: Beinhaltet die SQL Scripts um die Datenbank aufzusetzen.
 - `src/main/resources/application.properties`: Die Konfigurationsdatei für die Datenbankverbindung und das Admin Login
+- `src/main/resources/messages.properties`: Die Fallback übersetzungen
+- `src/main/resources/messages_en.properties`: Die Englischen übersetzungen
+- `src/main/resources/messages_de.properties`: Die Deutschen übersetzungen
 - `src/main/resources/static`: Statische Ressourcen für die Webapplikation (Bilder, JS, CSS)
 - `src/main/resources/templates`: Thymeleaf Templates
 - `src/main/resources/templates/admin/`: Templates für die Admin Oberfläche
