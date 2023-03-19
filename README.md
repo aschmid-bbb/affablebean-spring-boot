@@ -17,10 +17,9 @@ Setup
 
 Aufbau Frontend
 ---------------
-- `src/main/resources/application.properties`: Die Konfigurationsdatei für die Datenbankverbindung und das Admin Login
-- `src/main/resources/messages.properties`: Die Fallback übersetzungen
-- `src/main/resources/messages_en.properties`: Die Englischen übersetzungen
-- `src/main/resources/messages_de.properties`: Die Deutschen übersetzungen
+- `src/main/resources/messages.properties`: Die Fallback-Übersetzungen
+- `src/main/resources/messages_en.properties`: Die englischen Übersetzungen
+- `src/main/resources/messages_de.properties`: Die deutschen Übersetzungen
 - `src/main/resources/static`: Statische Ressourcen für die Webapplikation (Bilder, JS, CSS)
 - `src/main/resources/templates`: Thymeleaf Templates
 - `src/main/resources/templates/admin/`: Templates für die Admin-Oberfläche
@@ -35,6 +34,7 @@ Aufbau Frontend
 
 Aufbau Backend
 --------------
+- `src/main/resources/application.properties`: Die Konfigurationsdatei für die Datenbankverbindung und das Admin Login
 - `ch.bbbaden.webshop.WebshopApplication`: Die Spring Boot Application (Das wird gestartet)
 - `ch.bbbaden.webshop.WebshopConfiguration`: Die Spring Boot Konfiguration
 - `ch.bbbaden.webshop.cart`: Package in welchem die Warenkorb-Logik implementiert ist.
