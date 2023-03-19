@@ -1,0 +1,16 @@
+<div class="content">
+    <h2 th:text="#{customers}"></h2>
+    <div class="row fw-bold">
+        <div class="col-sm-2" th:text="#{customerid}">customer id</div>
+        <div class="col-sm-3" th:text="#{name}">name</div>
+        <div class="col-sm-4" th:text="#{email}">email</div>
+        <div class="col-sm-3" th:text="#{phone}">phone</div>
+    </div>
+    <div class="row" th:each="customer : ${customers}">
+        <div class="col-sm-2"><a class="link-dark text-decoration-none" th:href="@{${'/admin/customer/' + customer.id}}" th:text="${customer.id}">customer id</a></div>
+        <div class="col-sm-3"><a class="link-dark text-decoration-none" th:href="@{${'/admin/customer/' + customer.id}}" th:text="${customer.name}">name</a></div>
+        <div class="col-sm-4"><a class="link-dark text-decoration-none" th:href="@{${'/admin/customer/' + customer.id}}" th:text="${customer.email}">email</a></div>
+        <div class="col-sm-3"><a class="link-dark text-decoration-none" th:href="@{${'/admin/customer/' + customer.id}}" th:text="${customer.phone}">phone</a></div>
+    </div>
+
+</div>

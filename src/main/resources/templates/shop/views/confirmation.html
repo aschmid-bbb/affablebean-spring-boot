@@ -1,0 +1,48 @@
+<div class="content">
+    <div class="bg-info-subtle p-3">
+        <p class="fw-bold" th:text="#{confirmation}"></p>
+        <p><span th:text="#{confirmationNumber}"></span><span class="fw-bold" th:text="${customerOrder.getConfirmationNumber()}"></span></p>
+        <p th:text="#{confirmationThanks}"></p>
+    </div>
+
+    <div class="row">
+        <div class="col-7 p-3 m-3 bg-info-subtle">
+            <h3 th:text="#{order-summary}"></h3>
+            <div class="row fw-bold">
+                <div class="col-sm-6" th:text="#{product}"></div>
+                <div class="col-sm-3 text-center" th:text="#{amount}"></div>
+                <div class="col-sm-1"></div>
+                <div class="col-sm-2" th:text="#{price}"></div>
+            </div>
+            <div class="row" th:each="orderedProduct : ${customerOrder.getOrderedProducts()}">
+                <div class="col-sm-6" th:text="#{${orderedProduct.getProduct().getName()}}"></div>
+                <div class="col-sm-3 text-center" th:text="${orderedProduct.getQuantity()}"></div>
+                <div class="col-sm-1">€</div>
+                <div class="col-sm-2" th:text="${orderedProduct.getPrice()}"></div>
+            </div>
+            <div class="row border-top border-dark">
+                <div class="col-sm-9 text-end" th:text="#{delivery-surcharge}"></div>
+                <div class="col-sm-1">€</div>
+                <div class="col-sm-2">3</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-9 text-end" th:text="#{total}"></div>
+                <div class="col-sm-1">€</div>
+                <div class="col-sm-2" th:text="${customerOrder.getAmount()}"></div>
+            </div>
+            <div class="row border-top border-dark">
+                <div class="col-sm" th:text="#{date-processed}"></div>
+                <div class="col-sm text-end" th:text="${customerOrder.getDateCreated()}"></div>
+            </div>
+        </div>
+        <div class="col-4 p-3 m-3 bg-info-subtle">
+            <h3 th:text="#{delivery-address}"></h3>
+            <div th:text="${customerOrder.getCustomer().getName()}"></div>
+            <div th:text="${customerOrder.getCustomer().getAddress()}"></div>
+            <div th:text="${customerOrder.getCustomer().getZipCity()}"></div>
+            <div class="border-top border-dark" th:text="${customerOrder.getCustomer().getEmail()}"></div>
+            <div th:text="${customerOrder.getCustomer().getPhone()}"></div>
+        </div>
+    </div>
+
+</div>

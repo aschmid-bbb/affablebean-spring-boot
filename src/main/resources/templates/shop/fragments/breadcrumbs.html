@@ -1,0 +1,7 @@
+<div class="breadcrumbs p-3">
+    <div class="breadcrumb float-start text-dark" th:each="breadcrumb: ${breadcrumbs}">
+        &nbsp;/&nbsp;<a class="link-dark" th:href="${breadcrumb.href}" th:text="${breadcrumb.text}"></a>
+    </div>
+    <div class="float-end"></div>
+</div>
+<div class="clearfix"></div>

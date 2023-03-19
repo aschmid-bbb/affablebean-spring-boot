@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <title th:text="#{adminTitle}">Spring Boot Webshop - Admin</title>
+</head>
+<body>
+<div class="container bg-primary-subtle position-relative p-3">
+    <h1 th:text="#{adminTitle}">Spring Boot Webshop - Admin</h1>
+    <div class="content bg-light p-3">
+        <h2 th:text="#{login}"></h2>
+        <form th:action="@{/admin/login}" method="post">
+            <div class="form-group">
+                <label for="username" th:text="#{username}">Name:</label>
+                <input class="form-control" type="text" id="username" name="username" th:required="required">
+            </div>
+            <div class="form-group">
+                <label for="password" th:text="#{password}">Name:</label>
+                <input class="form-control" type="password" id="password" name="password" th:required="required">
+            </div>
+            <div class="form-group mt-3">
+                <input class="form-control" type="submit" th:value="#{login}">
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

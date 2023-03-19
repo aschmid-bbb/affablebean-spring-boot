@@ -1,0 +1,39 @@
+<div class="content bg-light p-3">
+    <h2 th:text="#{orderDetail}"></h2>
+    <div class="row">
+        <div class="col-sm" th:text="#{customerid}"></div>
+        <div class="col-sm" th:text="${order.id}"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm" th:text="#{confirmationNo}"></div>
+        <div class="col-sm" th:text="${order.confirmationNumber}"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm" th:text="#{date-processed}"></div>
+        <div class="col-sm" th:text="${order.dateCreated}"></div>
+    </div>
+    <div class="row border-bottom border-dark fw-bold">
+        <div class="col-sm-4" th:text="#{product}"></div>
+        <div class="col-sm-4" th:text="#{quantity}"></div>
+        <div class="col-sm-4" th:text="#{price}"></div>
+    </div>
+    <div class="row" th:each="orderedProduct : ${order.getOrderedProducts()}">
+        <div class="col-sm-4" th:text="#{${orderedProduct.getProduct().getName()}}"></div>
+        <div class="col-sm-4" th:text="${orderedProduct.getQuantity()}"></div>
+        <div class="col-sm-1">€</div>
+        <div class="col-sm-3" th:text="${orderedProduct.getPrice()}"></div>
+    </div>
+    <div class="row border-top boder-dark">
+        <div class="col-sm-8 text-end" th:text="#{delivery-surcharge}"></div>
+        <div class="col-sm-1">€</div>
+        <div class="col-sm-3">3</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8 text-end" th:text="#{gross_amount}"></div>
+        <div class="col-sm-1">€</div>
+        <div class="col-sm-3" th:text="${order.getAmount()}"></div>
+    </div>
+    <div class="border-top border-dark">
+        <a th:href="@{${'/admin/customer/' + order.getCustomer().getId()}}" th:text="#{switchToCustomer}"></a>
+    </div>
+</div>

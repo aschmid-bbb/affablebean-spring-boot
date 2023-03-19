@@ -1,0 +1,4 @@
+<div class="language-switch position-absolute m-3 top-0 end-0">
+    <a th:class="${lang == 'de' ? 'fw-bold link-dark' : 'link-dark'}" th:href="@{/lang/change/de}" th:text="#{lang.de}"></a>
+    <a th:class="${lang == 'en' ? 'fw-bold link-dark' : 'link-dark'}" th:href="@{/lang/change/en}" th:text="#{lang.en}"></a>
+</div>

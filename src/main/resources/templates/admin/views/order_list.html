@@ -1,0 +1,15 @@
+<div class="content">
+    <h2 th:text="#{orders}"></h2>
+    <div class="row fw-bold">
+        <div class="col-sm-2" th:text="#{orderid}">order id</div>
+        <div class="col-sm-3" th:text="#{confirmationNo}">confirmationNumber</div>
+        <div class="col-sm-4" th:text="#{amount}">amount</div>
+        <div class="col-sm-3" th:text="#{datecreated}">dateCreated</div>
+    </div>
+    <div class="row" th:each="order : ${orders}">
+        <div class="col-sm-2"><a class="link-dark text-decoration-none" th:href="@{${'/admin/order/' + order.id}}" th:text="${order.id}">order id</a></div>
+        <div class="col-sm-3"><a class="link-dark text-decoration-none" th:href="@{${'/admin/order/' + order.id}}" th:text="${order.confirmationNumber}">confirmationNumber</a></div>
+        <div class="col-sm-4"><a class="link-dark text-decoration-none" th:href="@{${'/admin/order/' + order.id}}" th:text="${order.amount}">amount</a></div>
+        <div class="col-sm-3"><a class="link-dark text-decoration-none" th:href="@{${'/admin/order/' + order.id}}" th:text="${order.dateCreated}">dateCreated</a></div>
+    </div>
+</div>

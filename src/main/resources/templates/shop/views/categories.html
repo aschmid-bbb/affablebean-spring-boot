@@ -1,0 +1,10 @@
+<div class="content">
+    <div class="category-container row">
+        <div class="category col-sm-6 text-center" th:each="category : ${categories}">
+            <a th:href="@{'/category/' + ${category.id}}">
+                <p th:text="#{${category.name}}" class="text-center"></p>
+                <img th:src="${'/img/categories/' + category.name + '.jpg'}">
+            </a>
+        </div>
+    </div>
+</div>

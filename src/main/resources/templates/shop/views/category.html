@@ -1,0 +1,15 @@
+<div class="content">
+    <h2 th:text="#{${category.name}}"></h2>
+    <div class="row fw-bold">
+        <div class="col-sm-2 text-center" th:text="#{picture}">Picture</div>
+        <div class="col-sm-6" th:text="#{label}">Name</div>
+        <div class="col-sm-2 text-end" th:text="#{price}">Price</div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row" th:each="product : ${category.productCollection}">
+        <div class="col-sm-2"><img th:src="${'/img/products/' + product.name + '.png'}"></div>
+        <div class="col-sm-6"><a th:href="@{'/category/' + ${category.id} + '/product/' + ${product.id}}" th:text="#{${product.name}}"></a></div>
+        <div class="col-sm-2 text-end"><span th:text="${product.price}"></span></div>
+        <div class="col-sm-2"><a th:href="@{'/cart/add/' + ${product.id}}"><span th:text="#{addToCart}"></span></a></div>
+    </div>
+</div>

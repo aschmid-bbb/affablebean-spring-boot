@@ -1,0 +1,4 @@
+<div th:if="${cart.getNumberOfItems() == 0}" class="content bg-light p-3">
+    <p th:text="#{cartEmpty}"></p>
+    <p><a th:href="@{/}" th:text="#{backToShop}"></a></p>
+</div>

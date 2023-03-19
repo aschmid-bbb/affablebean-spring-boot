@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <script type="text/javascript" src="/js/jquery-3.6.4.js"></script>
+    <title th:text="#{title}">Spring Boot Webshop</title>
+</head>
+<body>
+<div class="container bg-primary-subtle position-relative p-3">
+    <h1 th:text="#{title}">Spring Boot Webshop</h1>
+    <div class="language-switch" th:replace="~{shop/fragments/language_selector}"></div>
+    <div class="cart-display p-3" th:replace="~{shop/fragments/cart_display}"></div>
+    <div class="breadcrumbs bg-light p-3" th:replace="~{shop/fragments/breadcrumbs}"></div>
+    <div class="bg-light p-3">
+        <div class="content" th:replace="~{'shop/views/' + ${content}}"></div>
+    </div>
+</div>
+</body>
+</html>

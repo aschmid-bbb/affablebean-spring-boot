@@ -1,0 +1,14 @@
+<div class="cart-display text-dark row p-3">
+    <div class="col-sm">
+        <img src="/img/cart.gif">
+        <span th:text="${cart.getNumberOfItems()}"></span>
+        <span th:if="${cart.getNumberOfItems() == 1}"><span th:text="#{item}"></span></span>
+        <span th:unless="${cart.getNumberOfItems() == 1}"><span th:text="#{items}"></span></span>
+    </div>
+    <div class="col-sm" th:if="${cart.getNumberOfItems() > 0}">
+        <a class="link-dark" th:href="@{/cart}" th:text="#{showCart}"></a>
+    </div>
+    <div class="col-sm" th:if="${cart.getNumberOfItems() > 0}">
+        <a class="link-dark" th:href="@{/checkout}" th:text="#{checkout}"></a>
+    </div>
+</div>
